@@ -105,10 +105,28 @@ int main()
 				break;
 			}
 		case 3:
+		{
+			system("cls");
+			if (chek1 == false)
+			{
+				printf("Пожалуйста, для начала введите строку");
+				getchar();
+				system("cls");
+				break;
+			}
+			else
+			{
+				printf("Исходная строка, состоящая из %d символов: %s\n", strlen(inp), inp);
+				getchar();
+				system("cls");
+				break;
+			}
+		}
+		case 4:
 			break;
 		}
 
-	} while (punkt != 3);
+	} while (punkt != 4);
 	
 	delete[] inp;
 
@@ -126,7 +144,8 @@ int menu()
 
 	printf("1. Ввод строки\n");
 	printf("2. Вывод расширенной строки\n");
-	printf("3. Выход\n");
+	printf("3. Вывод исходной строки\n");
+	printf("4. Выход\n");
 
 	//_________________________________________________________________________
 	printf("___________________\n\n");
@@ -138,7 +157,7 @@ int menu()
 			printf("The entered value is invalid. Please try again.\n");
 			while (getchar() != '\n');
 		}
-	} while ((punkt < 1) || (punkt > 3));
+	} while ((punkt < 1) || (punkt > 4));
 	return punkt;
 }
 
